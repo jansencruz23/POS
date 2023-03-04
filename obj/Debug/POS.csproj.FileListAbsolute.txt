@@ -1,0 +1,12 @@
+D:\User\Jansen\Freelance\2023\POS\POS\POS\bin\Debug\POS.exe.config
+D:\User\Jansen\Freelance\2023\POS\POS\POS\bin\Debug\POS.exe
+D:\User\Jansen\Freelance\2023\POS\POS\POS\bin\Debug\POS.pdb
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.csproj.AssemblyReference.cache
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.csproj.SuggestedBindingRedirects.cache
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.Properties.Resources.resources
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.csproj.GenerateResource.cache
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.csproj.CoreCompileInputs.cache
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.exe
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.pdb
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.Item.resources
+D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.Form1.resources
