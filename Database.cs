@@ -49,7 +49,7 @@ namespace POS
 
         public void InsertTransaction(Customer customer, List<int> pId, List<string> pName,
             List<int> pQty, List<double> pAmount, List<double> pTotal, double gross, double tax,
-            double disc, double total, int tId)
+            double disc, double total, int tId, string payment, double cost, double change, string dtp)
         {
             string prodId = "";
             foreach(var id in pId)
@@ -84,8 +84,8 @@ namespace POS
             con.Open();
             cmd = new SqlCommand("INSERT INTO tblTransaction (ProductId, ProductName, ProductQty, " +
                 "ProductAmount, ProductSubTotal, CustomerId, CustomerName, CustomerNumber, GrossTotal, Tax, " +
-                "Discount, Total) VALUES (@pId, @pName, @pQty, @pAmount, @pTotal, @cId, @cName, @cNum, @gross, @tax," +
-                "@disc, @total)", con);
+                "Discount, Total, PaymentMethod, Cost, Change, DateTime) VALUES (@pId, @pName, @pQty, @pAmount, @pTotal, @cId, @cName, @cNum, @gross, @tax," +
+                "@disc, @total, @payment, @cost, @change, @dtp)", con);
             cmd.Parameters.AddWithValue("@pId", prodId);
             cmd.Parameters.AddWithValue("@pName", prodName);
             cmd.Parameters.AddWithValue("@pQty", prodQty);
@@ -98,6 +98,10 @@ namespace POS
             cmd.Parameters.AddWithValue("@tax", tax);
             cmd.Parameters.AddWithValue("@disc", disc);
             cmd.Parameters.AddWithValue("@total", total);
+            cmd.Parameters.AddWithValue("@payment", payment);
+            cmd.Parameters.AddWithValue("@cost", cost);
+            cmd.Parameters.AddWithValue("@change", change);
+            cmd.Parameters.AddWithValue("@dtp", dtp);
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Success");

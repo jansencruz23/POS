@@ -47,7 +47,7 @@
             this.txtTax = new System.Windows.Forms.TextBox();
             this.txtGross = new System.Windows.Forms.TextBox();
             this.txtTransId = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.btnTransact = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn1 = new System.Windows.Forms.Button();
@@ -123,7 +123,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(791, 88);
+            this.btnRemove.Location = new System.Drawing.Point(803, 433);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 2;
@@ -133,7 +133,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(791, 59);
+            this.btnReset.Location = new System.Drawing.Point(803, 481);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 3;
@@ -220,16 +220,17 @@
             this.txtTransId.Size = new System.Drawing.Size(100, 20);
             this.txtTransId.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // dtp
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(535, 29);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtp.Location = new System.Drawing.Point(535, 29);
+            this.dtp.Name = "dtp";
+            this.dtp.Size = new System.Drawing.Size(200, 20);
+            this.dtp.TabIndex = 10;
+            this.dtp.Value = new System.DateTime(2023, 3, 5, 11, 8, 4, 0);
             // 
             // btnTransact
             // 
-            this.btnTransact.Location = new System.Drawing.Point(671, 88);
+            this.btnTransact.Location = new System.Drawing.Point(696, 435);
             this.btnTransact.Name = "btnTransact";
             this.btnTransact.Size = new System.Drawing.Size(75, 23);
             this.btnTransact.TabIndex = 11;
@@ -389,6 +390,9 @@
             // cbPayMethod
             // 
             this.cbPayMethod.FormattingEnabled = true;
+            this.cbPayMethod.Items.AddRange(new object[] {
+            "CASH",
+            "G-CASH"});
             this.cbPayMethod.Location = new System.Drawing.Point(145, 13);
             this.cbPayMethod.Name = "cbPayMethod";
             this.cbPayMethod.Size = new System.Drawing.Size(146, 21);
@@ -410,7 +414,7 @@
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(696, 435);
+            this.btnPay.Location = new System.Drawing.Point(696, 481);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(75, 23);
             this.btnPay.TabIndex = 14;
@@ -427,7 +431,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnTransact);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtp);
             this.Controls.Add(this.txtTransId);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSave);
@@ -473,7 +477,7 @@
         private System.Windows.Forms.TextBox txtTax;
         private System.Windows.Forms.TextBox txtGross;
         private System.Windows.Forms.TextBox txtTransId;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp;
         private System.Windows.Forms.Button btnTransact;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnC;

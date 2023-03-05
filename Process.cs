@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using TextBox = System.Windows.Forms.TextBox;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace POS
 {
@@ -152,7 +153,7 @@ namespace POS
             discRes = 0;
         }
 
-        public void Transact(Customer customer, DataGridView dgv, TextBox gross, TextBox tax, TextBox disc, TextBox total, int tId)
+        public void Transact(Customer customer, DataGridView dgv, TextBox gross, TextBox tax, TextBox disc, TextBox total, int tId, ComboBox payMethod, TextBox cost, TextBox change, DateTimePicker dtp)
         {
             List<int> productId = new List<int>();
             List<string> productName = new List<string>();
@@ -164,6 +165,10 @@ namespace POS
             double dTax = double.Parse(tax.Text);
             double dDisc = double.Parse(disc.Text);
             double dTotal = double.Parse(total.Text);
+            string payment = payMethod.Text;
+            double dCost = double.Parse(cost.Text);
+            double dChange = double.Parse(change.Text);
+            string dateTime = dtp.Value.ToString("MM/dd/yyyy HH:mm:ss");
 
             try{
                 foreach (DataGridViewRow row in dgv.Rows)
@@ -176,7 +181,7 @@ namespace POS
                 }
             }
             catch {}
-            db.InsertTransaction(customer, productId, productName, productQty, productAmount, productSubTotal, dGross, dTax, dDisc, dTotal, tId);
+            db.InsertTransaction(customer, productId, productName, productQty, productAmount, productSubTotal, dGross, dTax, dDisc, dTotal, tId, payment, dCost, dChange, dateTime);
 
             //db.InsertTransaction(customer, itemDetails);
         }

@@ -39,6 +39,7 @@ namespace POS
             }
             txtCId.Text = db.GetLatestId("tblCustomer", "CustomerId").ToString();
             txtTransId.Text = db.GetLatestId("tblTransaction", "TransactionId").ToString();
+            cbPayMethod.SelectedIndex = 0;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -77,7 +78,7 @@ namespace POS
 
         private void btnTransact_Click(object sender, EventArgs e)
         {
-            process.Transact(SaveCustomer(), dgv, txtGross, txtTax, txtDiscount, txtTotal, Convert.ToInt32(txtTransId.Text));
+            process.Transact(SaveCustomer(), dgv, txtGross, txtTax, txtDiscount, txtTotal, Convert.ToInt32(txtTransId.Text), cbPayMethod, txtCost, txtChange, dtp);
         }
 
         private Customer SaveCustomer()
