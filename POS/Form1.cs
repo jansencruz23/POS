@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using POS.Report;
 
 namespace POS
 {
@@ -151,6 +152,11 @@ namespace POS
             }
             else
                 MessageBox.Show("Insufficient amount");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Receipt().Show();
         }
     }
 }
