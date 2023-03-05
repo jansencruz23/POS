@@ -25,6 +25,9 @@ namespace POS
 
         List<int> idList = new List<int>();
         List<Item> itemList = new List<Item>();
+
+        Database db = new Database();
+
         public void AddToTable(DataGridView dgv, object sender)
         {
             Item item = (Item)sender;
@@ -77,7 +80,7 @@ namespace POS
         {
             foreach (var item in itemList)
             {
-                    item.TotalPrice = item.ProductPrice;
+                 item.TotalPrice = item.ProductPrice;
             }
             dgv.Rows.Clear();
             idList.Clear();
@@ -145,10 +148,37 @@ namespace POS
             _discount = 0;
             _total = 0;
 
-
             grossRes = 0;
             discRes = 0;
         }
 
+        public void Transact(Customer customer, DataGridView dgv, TextBox gross, TextBox tax, TextBox disc, TextBox total, int tId)
+        {
+            List<int> productId = new List<int>();
+            List<string> productName = new List<string>();
+            List<int> productQty = new List<int>();
+            List<double> productAmount = new List<double>();
+            List<double> productSubTotal = new List<double>();
+
+            double dGross = double.Parse(gross.Text);
+            double dTax = double.Parse(tax.Text);
+            double dDisc = double.Parse(disc.Text);
+            double dTotal = double.Parse(total.Text);
+
+            try{
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                     productId.Add((int)row.Cells[0].Value);
+                     productName.Add(row.Cells[1].Value.ToString());
+                     productQty.Add((int)row.Cells[2].Value);
+                     productAmount.Add((double)row.Cells[3].Value);
+                     productSubTotal.Add((double)row.Cells[4].Value);
+                }
+            }
+            catch {}
+            db.InsertTransaction(customer, productId, productName, productQty, productAmount, productSubTotal, dGross, dTax, dDisc, dTotal, tId);
+
+            //db.InsertTransaction(customer, itemDetails);
+        }
     }
 }
