@@ -10,3 +10,15 @@ D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.exe
 D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.pdb
 D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.Item.resources
 D:\User\Jansen\Freelance\2023\POS\POS\POS\obj\Debug\POS.Form1.resources
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\bin\Debug\POS.exe.config
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\bin\Debug\POS.exe
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\bin\Debug\POS.pdb
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.csproj.AssemblyReference.cache
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.csproj.SuggestedBindingRedirects.cache
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.Form1.resources
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.Item.resources
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.Properties.Resources.resources
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.csproj.GenerateResource.cache
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.csproj.CoreCompileInputs.cache
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.exe
+D:\Downloads\POS-20230305T103258Z-001\POS\POS\obj\Debug\POS.pdb

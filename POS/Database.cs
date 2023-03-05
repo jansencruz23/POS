@@ -16,12 +16,7 @@ namespace POS
         SqlDataReader rdr;
         public static List<Item> items = new List<Item>();
 
-<<<<<<< HEAD
         // read values for product buttons
-=======
-        public Database() {}
-
->>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
         public void ReadProductValues()
         {
             cmd = new SqlCommand("SELECT * FROM tblProduct", con);
@@ -39,7 +34,6 @@ namespace POS
             con.Close();
         }
 
-<<<<<<< HEAD
         // inserts customer info to the database
         public void InsertCustomer(Customer customer)
         {
@@ -66,66 +60,14 @@ namespace POS
             string prodQty = string.Join(", ", pQty);
             string prodAmount = string.Join(", ", pAmount);
             string prodTotal = string.Join(", ", pAmount);
-=======
-        public void InsertCustomer(Customer customer)
-        {
-            con.Open();
-            cmd = new SqlCommand("INSERT INTO tblCustomer (CustomerName, CustomerNumber) VALUES (@name, @number)", con);
-            cmd.Parameters.AddWithValue("@name", customer.Name);
-            cmd.Parameters.AddWithValue("@number", customer.Number);
-
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Success");
-            con.Close();
-        }
-
-        public void InsertTransaction(Customer customer, List<int> pId, List<string> pName,
-            List<int> pQty, List<double> pAmount, List<double> pTotal, double gross, double tax,
-            double disc, double total, int tId)
-        {
-            string prodId = "";
-            foreach(var id in pId)
-            {
-                prodId += id + ", ";
-            }
-
-            string prodName = "";
-            foreach(var name in pName)
-            {
-                prodName += name + ", ";
-            }
-
-            string prodQty = "";
-            foreach (var qty in pQty)
-            {
-                prodQty += qty + ", ";
-            }
-
-            string prodAmount = "";
-            foreach (var qty in pAmount)
-            {
-                prodAmount += qty + ", ";
-            }
-
-            string prodTotal = "";
-            foreach (var qty in pTotal)
-            {
-                prodTotal += qty + ", ";
-            }
->>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
 
             con.Open();
             cmd = new SqlCommand("INSERT INTO tblTransaction (ProductId, ProductName, ProductQty, " +
                 "ProductAmount, ProductSubTotal, CustomerId, CustomerName, CustomerNumber, GrossTotal, Tax, " +
-<<<<<<< HEAD
                 "Discount, Total, PaymentMethod, Cost, Change, DateTime) VALUES (@pId, @pName, @pQty, @pAmount, @pTotal, @cId, @cName, @cNum, @gross, @tax," +
                 "@disc, @total, @payment, @cost, @change, @dtp)", con);
 
             #region --SETTING PARAMS--
-=======
-                "Discount, Total) VALUES (@pId, @pName, @pQty, @pAmount, @pTotal, @cId, @cName, @cNum, @gross, @tax," +
-                "@disc, @total)", con);
->>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
             cmd.Parameters.AddWithValue("@pId", prodId);
             cmd.Parameters.AddWithValue("@pName", prodName);
             cmd.Parameters.AddWithValue("@pQty", prodQty);
@@ -138,7 +80,6 @@ namespace POS
             cmd.Parameters.AddWithValue("@tax", tax);
             cmd.Parameters.AddWithValue("@disc", disc);
             cmd.Parameters.AddWithValue("@total", total);
-<<<<<<< HEAD
             cmd.Parameters.AddWithValue("@payment", payment);
             cmd.Parameters.AddWithValue("@cost", cost);
             cmd.Parameters.AddWithValue("@change", change);
@@ -151,24 +92,13 @@ namespace POS
         }
 
         // gets latest id based on the parameter which decides which table to get
-=======
-
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Success");
-            con.Close();
-        }
-
->>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
         public int GetLatestId(string table, string column)
         {
             int id;
             cmd = new SqlCommand($"SELECT TOP 1 {column} FROM {table} ORDER BY {column} DESC", con);
             con.Open();
             rdr = cmd.ExecuteReader();
-<<<<<<< HEAD
 
-=======
->>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
             if (rdr.Read())
             {
                 id = rdr.GetInt32(0) + 1;
@@ -182,8 +112,4 @@ namespace POS
             }
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
