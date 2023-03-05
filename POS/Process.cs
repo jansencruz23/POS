@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using TextBox = System.Windows.Forms.TextBox;
+<<<<<<< HEAD
 using ComboBox = System.Windows.Forms.ComboBox;
+=======
+>>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
 
 namespace POS
 {
@@ -58,6 +61,37 @@ namespace POS
             }
         }
 
+<<<<<<< HEAD
+        // removing single item from table
+        public void RemoveFromTable(DataGridView dgv, int id)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in dgv.Rows) {
+                    int dgvId = Convert.ToInt32(row.Cells[0].Value);
+                    if (dgvId == id)
+                    {
+                        foreach (var item in itemList)
+                            if (item.Id == id)
+                                item.TotalPrice = item.ProductPrice;
+
+                        idList.Remove(id);
+                        itemList.RemoveAll(item => item.Id == id);
+                        dgv.Rows.Remove(row);
+                        ResetValues();
+                    }
+                }
+            }
+            catch (Exception ex) { }
+        }
+
+        // clearing all items in table
+        public void ResetTable(DataGridView dgv)
+        {
+            foreach (var item in itemList)
+                 item.TotalPrice = item.ProductPrice;
+
+=======
         public void RemoveFromTable(DataGridView dgv, int id)
         {
             foreach (DataGridViewRow row in dgv.Rows) {
@@ -83,12 +117,24 @@ namespace POS
             {
                  item.TotalPrice = item.ProductPrice;
             }
+>>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
             dgv.Rows.Clear();
             idList.Clear();
             itemList.Clear();
             ResetValues();
         }
 
+<<<<<<< HEAD
+        // updating textbox values
+        public void UpdateTextBox(TextBox gross, TextBox tax, TextBox disc, TextBox total)
+        {
+            ResetValues();
+            Formulate();
+            SetTextBox(gross, tax, disc, total);
+        }
+
+        // updating textbox whenever an item is removed
+=======
         public void UpdateTextBox(TextBox gross, TextBox tax, TextBox disc, TextBox total)
         {
 
@@ -112,6 +158,7 @@ namespace POS
 
         }
 
+>>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
         public void SubtractRemoved(int id, TextBox gross, TextBox tax, TextBox disc, TextBox total)
         {
             ResetValues();
@@ -122,6 +169,14 @@ namespace POS
                 itemList.RemoveAll(item => item.Id == id);
                 ResetValues();
             }
+<<<<<<< HEAD
+
+            Formulate();
+            SetTextBox(gross, tax, disc, total);
+        }
+
+        // resets the values
+=======
                
 
 
@@ -142,6 +197,7 @@ namespace POS
             total.Text = _total.ToString();
         }
 
+>>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
         public void ResetValues()
         {
             _gross = 0;
@@ -153,24 +209,43 @@ namespace POS
             discRes = 0;
         }
 
+<<<<<<< HEAD
+        // set ups values to be passed on the database
         public void Transact(Customer customer, DataGridView dgv, TextBox gross, TextBox tax, TextBox disc, TextBox total, int tId, ComboBox payMethod, TextBox cost, TextBox change, DateTimePicker dtp)
         {
+            #region --CREATING LISTS--
+=======
+        public void Transact(Customer customer, DataGridView dgv, TextBox gross, TextBox tax, TextBox disc, TextBox total, int tId)
+        {
+>>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
             List<int> productId = new List<int>();
             List<string> productName = new List<string>();
             List<int> productQty = new List<int>();
             List<double> productAmount = new List<double>();
             List<double> productSubTotal = new List<double>();
+<<<<<<< HEAD
+            #endregion
+            #region --PARSING VALUES--
+=======
 
+>>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
             double dGross = double.Parse(gross.Text);
             double dTax = double.Parse(tax.Text);
             double dDisc = double.Parse(disc.Text);
             double dTotal = double.Parse(total.Text);
+<<<<<<< HEAD
             string payment = payMethod.Text;
             double dCost = double.Parse(cost.Text);
             double dChange = double.Parse(change.Text);
-            string dateTime = dtp.Value.ToString("MM/dd/yyyy HH:mm:ss");
+            string dateTime = dtp.Value.ToString("MM/dd/yyyy");
+            #endregion
+
+            try
+            {
+=======
 
             try{
+>>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
                      productId.Add((int)row.Cells[0].Value);
@@ -181,9 +256,37 @@ namespace POS
                 }
             }
             catch {}
+<<<<<<< HEAD
             db.InsertTransaction(customer, productId, productName, productQty, productAmount, productSubTotal, dGross, dTax, dDisc, dTotal, tId, payment, dCost, dChange, dateTime);
+        }
+
+        // formulas for values in textboxes
+        private void Formulate()
+        {
+            foreach (Item item in itemList)
+            {
+                grossRes = (item.TotalPrice + (item.TotalPrice * TAX));
+                discRes = (item.TotalPrice + (item.TotalPrice * TAX)) * DISCOUNT;
+
+                _gross += grossRes;
+                _tax += item.TotalPrice * TAX;
+                _discount += grossRes * DISCOUNT;
+                _total += grossRes - discRes;
+            }
+        }
+
+        // sets the latest value to the textboxes
+        private void SetTextBox(TextBox gross, TextBox tax, TextBox disc, TextBox total)
+        {
+            gross.Text = _gross.ToString();
+            tax.Text = _tax.ToString();
+            disc.Text = _discount.ToString();
+            total.Text = _total.ToString();
+=======
+            db.InsertTransaction(customer, productId, productName, productQty, productAmount, productSubTotal, dGross, dTax, dDisc, dTotal, tId);
 
             //db.InsertTransaction(customer, itemDetails);
+>>>>>>> 9df1b6c (Add database method for the transaction. Add cost and the number buttons)
         }
     }
 }
