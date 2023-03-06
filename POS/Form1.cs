@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -66,23 +67,32 @@ namespace POS
         private void btnReset_Click(object sender, EventArgs e)
         {
             process.ResetTable(dgv);
-            ResetTextBox();
+            ResetPayTextBox();
         }
 
         // saves customer info, calling database
         private void btnSave_Click(object sender, EventArgs e)
         {
             db.InsertCustomer(SaveCustomer());
+            txtCId.Text = db.GetLatestId("tblCustomer", "CustomerId").ToString();
             btnPay.Enabled = true;
         }
 
         // resets textboxes
-        private void ResetTextBox()
+        private void ResetPayTextBox()
         {
             txtGross.Text = "";
             txtTax.Text = "";
             txtDiscount.Text = "";
             txtTotal.Text = "";
+            txtCost.Text = "";
+            txtChange.Text = "";
+        }
+
+        private void ResetCustomerInfo()
+        {
+            txtCName.Text = "";
+            txtCNum.Text = "";
         }
 
         // button for transaction
@@ -91,6 +101,12 @@ namespace POS
             try
             {
                 process.Transact(SaveCustomer(), dgv, txtGross, txtTax, txtDiscount, txtTotal, Convert.ToInt32(txtTransId.Text), cbPayMethod, txtCost, txtChange, dtp);
+                txtTransId.Text = db.GetLatestId("tblTransaction", "TransactionId").ToString();
+                new Receipt().ShowDialog();
+                ResetCustomerInfo();
+                ResetPayTextBox();
+                ResetButtons();
+                process.ResetTable(dgv);
             }
             catch {
                 MessageBox.Show("Please fill the textboxes");
@@ -154,9 +170,10 @@ namespace POS
                 MessageBox.Show("Insufficient amount");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ResetButtons()
         {
-            new Receipt().Show();
+            btnPay.Enabled = false;
+            btnTransact.Enabled = false;
         }
     }
 }

@@ -81,7 +81,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -143,6 +142,7 @@
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Location = new System.Drawing.Point(210, 30);
@@ -156,6 +156,7 @@
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Location = new System.Drawing.Point(210, 84);
@@ -191,6 +192,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(744, 43);
@@ -303,6 +305,7 @@
             // btnTransact
             // 
             this.btnTransact.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnTransact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransact.Enabled = false;
             this.btnTransact.FlatAppearance.BorderSize = 0;
             this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -337,6 +340,7 @@
             // btnC
             // 
             this.btnC.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnC.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnC.Location = new System.Drawing.Point(210, 274);
@@ -350,6 +354,7 @@
             // btnPeriod
             // 
             this.btnPeriod.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPeriod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPeriod.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btnPeriod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPeriod.Location = new System.Drawing.Point(110, 274);
@@ -363,6 +368,7 @@
             // btn0
             // 
             this.btn0.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn0.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Location = new System.Drawing.Point(10, 274);
@@ -376,6 +382,7 @@
             // btn9
             // 
             this.btn9.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn9.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Location = new System.Drawing.Point(210, 196);
@@ -389,6 +396,7 @@
             // btn8
             // 
             this.btn8.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn8.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Location = new System.Drawing.Point(110, 196);
@@ -402,6 +410,7 @@
             // btn7
             // 
             this.btn7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn7.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Location = new System.Drawing.Point(10, 196);
@@ -415,6 +424,7 @@
             // btn6
             // 
             this.btn6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn6.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Location = new System.Drawing.Point(210, 116);
@@ -428,6 +438,7 @@
             // btn5
             // 
             this.btn5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Location = new System.Drawing.Point(110, 116);
@@ -441,6 +452,7 @@
             // btn4
             // 
             this.btn4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn4.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Location = new System.Drawing.Point(10, 116);
@@ -454,6 +466,7 @@
             // btn3
             // 
             this.btn3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Location = new System.Drawing.Point(210, 35);
@@ -467,6 +480,7 @@
             // btn2
             // 
             this.btn2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Location = new System.Drawing.Point(110, 35);
@@ -480,6 +494,7 @@
             // btn1
             // 
             this.btn1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Location = new System.Drawing.Point(10, 35);
@@ -559,6 +574,7 @@
             // btnPay
             // 
             this.btnPay.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPay.Enabled = false;
             this.btnPay.FlatAppearance.BorderSize = 0;
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -626,23 +642,12 @@
             this.label12.TabIndex = 20;
             this.label12.Text = "Date/Time";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1322, 642);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -661,6 +666,7 @@
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.panelItems);
             this.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -732,7 +738,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
     }
 }
 
